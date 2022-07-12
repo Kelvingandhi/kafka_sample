@@ -1,0 +1,19 @@
+kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic first_kafka_topic
+
+kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic first_kafka_topic
+
+kafka-topics.sh --list --bootstrap-server localhost:9092
+
+kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic dummy_topic
+
+kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic dummy_topic
+
+Shell-commands:
+    Kafka-Console Producer:
+    kafka-console-producer.sh --broker-list kafka:9092 --topic kafka_messages
+
+    Kafka-Console Consumer:
+    kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic kafka_messages
+
+    kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic kafka_messages --from-beginning
+
